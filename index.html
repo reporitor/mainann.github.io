@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jualan Debu Perii ✨</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5);
+            font-family: 'Comic Neue', cursive;
+            overflow: hidden;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%23d4f1d4" width="100" height="100"/></svg>');
+            background-size: 20px 20px;
+        }
+
+        .popup-container {
+            position: relative;
+            width: 350px;
+            background-color: #c8f4c8;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0, 100, 0, 0.3);
+            text-align: center;
+            border: 3px solid #a0e6a0;
+            animation: float 3s ease-in-out infinite;
+            z-index: 10;
+        }
+
+        .title {
+            font-size: 28px;
+            color: #4a7c4a;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad0c4, #a18cd1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        .description {
+            background-color: #e0f7e0;
+            padding: 15px;
+            border-radius: 15px;
+            margin: 20px 0;
+            color: #5a8a5a;
+            font-size: 18px;
+            border: 2px dashed #a0e6a0;
+        }
+
+        .price {
+            font-weight: bold;
+            color: #d63384;
+            font-size: 20px;
+        }
+
+        .promo {
+            color: #e67e22;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .tinkerbell {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            top: -30px;
+            right: -20px;
+            animation: float 2.5s ease-in-out infinite, swing 3s ease-in-out infinite;
+            transform-origin: top center;
+            z-index: 20;
+        }
+
+        .rainbow {
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            top: 0;
+            left: 0;
+            border-radius: 20px 20px 0 0;
+            background: linear-gradient(to right, 
+                red, orange, yellow, green, blue, indigo, violet);
+            opacity: 0.7;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 5;
+        }
+
+        .fairy-dust {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            background-color: #fffacd;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0;
+            z-index: 5;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 25px;
+            height: 25px;
+            background-color: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 14px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 30;
+        }
+
+        .close-btn:hover {
+            background-color: #ff5252;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes swing {
+            0%, 100% {
+                transform: rotate(-5deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+        }
+
+        @keyframes sparkle {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+
+        @keyframes dust-fall {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="popup-container">
+        <div class="rainbow"></div>
+        <button class="close-btn">×</button>
+        <img src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><circle cx='50' cy='30' r='20' fill='%23FFD700'/><circle cx='50' cy='80' r='30' fill='%23FFD700'/><path d='M30,50 Q50,30 70,50 Q50,70 30,50' fill='%23FFFFFF'/><circle cx='40' cy='40' r='3' fill='%23000'/><circle cx='60' cy='40' r='3' fill='%23000'/><path d='M40,60 Q50,65 60,60' stroke='%23000' fill='none' stroke-width='2'/><path d='M50,20 L50,10 M40,15 L60,15' stroke='%23000' stroke-width='2'/><path d='M20,20 L30,30 M80,20 L70,30' stroke='%23000' stroke-width='2'/></svg>" 
+             class="tinkerbell" alt="Tinkerbell">
+        <h1 class="title">✨ JUALAN DEBU PERII ✨</h1>
+        <div class="description">
+            <p class="price">Harga: 1 botol 10.000</p>
+            <p class="promo">Promo: beli 3 botol diskon 20%</p>
+        </div>
+    </div>
+
+    <script>
+        // Create sparkles
+        function createSparkles() {
+            const colors = ['#ff9a9e', '#fad0c4', '#a18cd1', '#fffacd', '#ffffff'];
+            
+            for (let i = 0; i < 15; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'sparkle';
+                sparkle.style.left = Math.random() * 100 + 'vw';
+                sparkle.style.top = Math.random() * 100 + 'vh';
+                sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                sparkle.style.width = (Math.random() * 10 + 5) + 'px';
+                sparkle.style.height = sparkle.style.width;
+                document.body.appendChild(sparkle);
+                
+                // Animate sparkles
+                setInterval(() => {
+                    sparkle.style.left = Math.random() * 100 + 'vw';
+                    sparkle.style.top = Math.random() * 100 + 'vh';
+                    sparkle.style.opacity = '0';
+                    sparkle.style.animation = 'sparkle ' + (Math.random() * 2 + 1) + 's infinite';
+                }, Math.random() * 3000 + 2000);
+            }
+        }
+        
+        // Create falling fairy dust
+        function createFairyDust() {
+            setInterval(() => {
+                const dust = document.createElement('div');
+                dust.className = 'fairy-dust';
+                dust.style.left = Math.random() * 100 + 'vw';
+                dust.style.top = '-10px';
+                dust.style.width = (Math.random() * 8 + 2) + 'px';
+                dust.style.height = dust.style.width;
+                dust.style.opacity = '0.8';
+                document.body.appendChild(dust);
+                
+                // Animate falling dust
+                dust.style.animation = 'dust-fall ' + (Math.random() * 3 + 2) + 's linear forwards';
+                
+                // Remove dust after animation
+                setTimeout(() => {
+                    dust.remove();
+                }, 5000);
+            }, 200);
+        }
+        
+        // Close button functionality
+        document.querySelector('.close-btn').addEventListener('click', () => {
+            document.querySelector('.popup-container').style.transform = 'scale(0.8)';
+            document.querySelector('.popup-container').style.opacity = '0';
+            setTimeout(() => {
+                document.body.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100vh;font-family:\'Comic Neue\',cursive;color:#4a7c4a;font-size:24px;">Terima kasih sudah mampir! ✨</div>';
+            }, 300);
+        });
+        
+        // Initialize effects
+        window.onload = () => {
+            createSparkles();
+            createFairyDust();
+            
+            // Make popup draggable
+            const popup = document.querySelector('.popup-container');
+            let isDragging = false;
+            let offsetX, offsetY;
+            
+            popup.addEventListener('mousedown', (e) => {
+                isDragging = true;
+                offsetX = e.clientX - popup.getBoundingClientRect().left;
+                offsetY = e.clientY - popup.getBoundingClientRect().top;
+                popup.style.cursor = 'grabbing';
+            });
+            
+            document.addEventListener('mousemove', (e) => {
+                if (!isDragging) return;
+                popup.style.left = (e.clientX - offsetX) + 'px';
+                popup.style.top = (e.clientY - offsetY) + 'px';
+                popup.style.position = 'absolute';
+                popup.style.transform = 'none';
+            });
+            
+            document.addEventListener('mouseup', () => {
+                isDragging = false;
+                popup.style.cursor = 'grab';
+            });
+        };
+    </script>
+</body>
+</html>
